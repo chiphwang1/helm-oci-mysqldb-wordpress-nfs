@@ -5,7 +5,7 @@
 
 ## Introduction
 
-This Helm chart will bootstrap a WordPress deployment using a MySQL Database Systems (MDS) as the database in a Kubernetes cluster deployed in Oracle CLoud Infrastrcuture (OCI). It will also create a loadbalancer with an externally accessible IP address to provide access to the Wordpress application. The Kubernetes cluster can be a cluster deployed using Oracle Container Engine for Kuberntes (OKE), or it can be a customer managed cluster deployed on virtual machine instances. 
+This Helm chart will bootstrap a WordPress deployment using a MySQL Database Systems (MDS) as the database in a Kubernetes cluster deployed in Oracle CLoud Infrastrcuture (OCI). It will also use OCI filesystems as the persistent storage for the wordpress deployment. It will also create a loadbalancer with an externally accessible IP address to provide access to the Wordpress application. The Kubernetes cluster can be a cluster deployed using Oracle Container Engine for Kuberntes (OKE), or it can be a customer managed cluster deployed on virtual machine instances. 
 
 
 This Helm chart relies on the OCI Service Operator for Kubernetes (OSOK) and it is a pre-requisite to have OSOK deployed within the cluster to use this Helm chart.
@@ -17,6 +17,7 @@ This Helm chart relies on the OCI Service Operator for Kubernetes (OSOK) and it 
 - [OCI Service Operator for Kuberntes (OSOK) deployed in the cluster](https://github.com/oracle/oci-service-operator/blob/main/docs/installation.md)
 - [kubectl installed and using the context for the Kubernetes cluster where the MDS resource will be deployed](https://kubernetes.io/docs/tasks/tools/)
 - [Helm installed](https://helm.sh/docs/intro/install/)
+- [OCI File System created](https://docs.oracle.com/en-us/iaas/Content/File/Tasks/creatingfilesystems.htm) and get server IP and mountTargetID OCID
 
 
 ##  Getting Started
