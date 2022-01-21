@@ -193,6 +193,7 @@ wordpress   LoadBalancer   10.96.12.177  129.158.42.147   80:30388/TCP    22m
 
 - [OCI Service Operator for Kuberntes (OSOK) deployed in the cluster](https://github.com/oracle/oci-service-operator)
 - [MySQL SB System Service](https://www.oracle.com/mysql/)
+- [OCI File Storage](https://docs.oracle.com/en-us/iaas/Content/File/Concepts/filestorageoverview.htm)
 
 
 ## License
