@@ -1,11 +1,11 @@
-# helm-oci-mds-wordpress
+# helm-oci-mds-wordpress-nfs
 
 [![License: UPL](https://img.shields.io/badge/license-UPL-green)](https://img.shields.io/badge/license-UPL-green) [![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=oracle-devrel_terraform-oci-arch-ci-cd)](https://sonarcloud.io/dashboard?id=oracle-devrel_terraform-oci-arch-ci-cd)
 
 
 ## Introduction
 
-This Helm chart will bootstrap a WordPress deployment using a MySQL Database Systems (MDS) as the database in a Kubernetes cluster deployed in Oracle CLoud Infrastrcuture (OCI). It will also use OCI filesystems as the persistent storage for the wordpress deployment. It will also create a loadbalancer with an externally accessible IP address to provide access to the Wordpress application. The Kubernetes cluster can be a cluster deployed using Oracle Container Engine for Kuberntes (OKE), or it can be a customer managed cluster deployed on virtual machine instances. 
+This Helm chart will bootstrap a WordPress deployment using a MySQL Database Systems (MDS) as the database in a Kubernetes cluster deployed in Oracle CLoud Infrastrcuture (OCI). It will also use OCI filesystems as the persistent storage for the wordpress deployment to allow multiple pods for high availability. It will also create a loadbalancer with an externally accessible IP address to provide access to the Wordpress application. The Kubernetes cluster can be a cluster deployed using Oracle Container Engine for Kuberntes (OKE), or it can be a customer managed cluster deployed on virtual machine instances. 
 
 
 This Helm chart relies on the OCI Service Operator for Kubernetes (OSOK) and it is a pre-requisite to have OSOK deployed within the cluster to use this Helm chart.
@@ -154,6 +154,9 @@ wordpress   LoadBalancer   10.96.12.177  129.158.42.147   80:30388/TCP    22m
 | `database.username` | The admin username for the administrative user for the MuSQL DB Systesm. This should be assigned during the deployment of the Helm chart and not kept in the values.yaml file| string | yes       |
 | `database.password` | The admin password for Mysql DB System. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character. | string | yes       |
 | `DBName` |  name of the database to create. | string | yes    |
+| `mountTargetID` |  OCID of OCI File System Mount | string | yes    |
+| `nfsServerIP` |  IP of OCI File System | string | yes    |
+| `nfsPath` |  Path of OCI File System | string | yes    |
 
 
 
